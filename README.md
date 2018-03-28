@@ -2,7 +2,14 @@
 
 ### W jaki sposób wygląda hierarchia interfejsów związana z kolekcjami?
 
-Miejsce na odpowiedź
+Na szczycie hierarchi klas znajduje się interface Collection. Pochodnymi interfejsu Collection są:
+* List
+* Set 
+    * pochodną jest SortedSet
+* Queue
+* Deque
+
+Obok tej hierarchii znajduje się Map oraz pochodny SortedMap.
 
 ### Jakie są podstawowe implementacje poszczególnych interfejsów?
 
