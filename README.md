@@ -13,11 +13,25 @@ Obok tej hierarchi znajduje się Map oraz pochodne SortedMap
 
 ### Jakie są podstawowe implementacje poszczególnych interfejsów?
 
-Miejsce na odpowiedź
+Podstawowymi implementacjami interfaceów są :
+* List: ArrayList, LinkedList.
+* Set: HashSet, TreeSet, LinkedHashSet,
+* Queue: PriorityQueue, LinkedList
+* Map: HashMap, TreeMap, LinkedHashMap
+* Deque: BlockingDeque, Linked List, ArrayDeque,
 
 ### W których kolekcjach elementy są sortowane i w jaki sposób?
 
-Miejsce na odpowiedź
+Elementy mogą być sortowane:
+* List- metodą sort, 
+* LinkedList,
+* ArrayList
+
+Kolekcje które przchowują elementy w sposób posortowany
+* TreeSet- może wykożystywać naturalny porządek lub poprzez Comparator.
+* TreeMap- posortowany po kluczu
+* PriorityQueue- naturalny porządek lub comprarator.
+* LinkedHashSet- przechowuje elementy w kolejności wstawienia.
 
 ### Implementacje interfejsu List – złożoność operacji
 
