@@ -35,7 +35,23 @@ Kolekcje które przchowują elementy w sposób posortowany
 
 ### Implementacje interfejsu List – złożoność operacji
 
-Miejsce na odpowiedź
+Creating: 
+addElementsToFront: 1184ms.
+addElementsToBack: 12ms.
+Iteration: 
+iterateForEachList: 18ms.
+iterateForList: 10ms.
+Remove: 
+removeList: 2090ms.
+-------------
+Creating: 
+addElementsToFront: 7ms.
+addElementsToBack: 10ms.
+Iteration: 
+iterateForEachList: 31ms.
+iterateForList: 15538ms.
+Remove: 
+removeList: 8068ms.
 
 ### Do których kolekcji można wstawiać wartości null?
 
