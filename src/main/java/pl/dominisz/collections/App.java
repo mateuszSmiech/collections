@@ -52,21 +52,24 @@ public class App {
     }
 
     public static void deleteElementsFromFront(List<Integer> list) {
-
+        long startTime = System.currentTimeMillis();
+        while (!list.isEmpty()) {
+            list.remove(0);
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("deleteElementsFromFront: " + (endTime - startTime) + " milliseconds");
     }
 
     public static void main(String[] args) {
         int count = 100000;
         //dla ArrayList
-        //utworzyć nową listę
         List<Integer> arrayList = new ArrayList<>();
         System.out.println("array list");
         addElementsToFront(arrayList, count);
         addElementsToBack(arrayList, count);
         iterateList(arrayList);
         iterateListForEach(arrayList);
-        //przejrzeć całą listę
-        //usunąć wszystkie elementy z listy poprzez usuwanie pierwszego elementu listy
+        deleteElementsFromFront(arrayList);
 
         //dla LinkedList
         List<Integer> linkedList = new LinkedList<>();
@@ -75,10 +78,7 @@ public class App {
         addElementsToBack(linkedList, count);
         iterateList(linkedList);
         iterateListForEach(linkedList);
-        //przejrzeć całą listę
-        //usunąć wszystkie elementy z listy poprzez usuwanie pierwszego elementu listy
-
-        //zmierzyć czas każdej z operacji
+        deleteElementsFromFront(linkedList);
     }
 
 }
