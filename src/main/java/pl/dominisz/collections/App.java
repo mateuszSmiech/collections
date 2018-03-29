@@ -1,5 +1,10 @@
 package pl.dominisz.collections;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+
 /**
  * http://dominisz.pl
  * 25.03.2018
