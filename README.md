@@ -46,6 +46,7 @@ Kolekcje, które przechowują elementy w sposób posortowany:
         * addElementsToBack: 9 milliseconds
         * iterateList: 35059 milliseconds
         * iterateListForEach: 16 milliseconds
+        
 ### Do których kolekcji można wstawiać wartości null?
 
 Miejsce na odpowiedź

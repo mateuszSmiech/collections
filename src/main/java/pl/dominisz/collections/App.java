@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 
 /**
  * http://dominisz.pl
@@ -31,33 +32,41 @@ public class App {
         System.out.println("addElementsToBack: " + (endTime - startTime) + " milliseconds");
     }
 
+    public static void measureTimeForOperation(List<Integer> list,
+                                               Consumer<List<Integer>> operation,
+                                               String description) {
+        long startTime = System.currentTimeMillis();
+        operation.accept(list);
+        long endTime = System.currentTimeMillis();
+        System.out.println(description + (endTime - startTime) + " milliseconds");
+    }
+
     //użyć pętli for (int i
     public static void iterateList(List<Integer> list) {
-        long startTime = System.currentTimeMillis();
-        for (int i = 0; i < list.size(); i++) {
-            Integer element = list.get(i);
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println("iterateList: " + (endTime - startTime) + " milliseconds");
+        measureTimeForOperation(list, new Consumer<List<Integer>>() {
+            @Override
+            public void accept(List<Integer> list) {
+                for (int i = 0; i < list.size(); i++) {
+                    Integer element = list.get(i);
+                }
+            }
+        }, "iterate list ");
     }
 
     //użyć pętli for each
     public static void iterateListForEach(List<Integer> list) {
-        long startTime = System.currentTimeMillis();
-        for (Integer integer : list) {
-            Integer element = integer;
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println("iterateListForEach: " + (endTime - startTime) + " milliseconds");
+        measureTimeForOperation(list,
+                new ForEachListIterator(),
+                "iterate list for each");
     }
 
     public static void deleteElementsFromFront(List<Integer> list) {
-        long startTime = System.currentTimeMillis();
-        while (!list.isEmpty()) {
-            list.remove(0);
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println("deleteElementsFromFront: " + (endTime - startTime) + " milliseconds");
+        measureTimeForOperation(list,
+                list1 -> {
+                    while (!list1.isEmpty()) {
+                        list1.remove(0);
+                    }
+                }, "delete elements from front");
     }
 
     public static void main(String[] args) {
