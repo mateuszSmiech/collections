@@ -2,62 +2,52 @@
 
 ### W jaki sposób wygląda hierarchia interfejsów związana z kolekcjami?
 
-Na szczycie hierarchi jest interface **Collection**.
-Pochodnymi Collections są: 
-* List, 
-* Set, 
-    *  Pochodna SortedSet
-* Queue, 
-* Deque.
-Obok tej hierarchi znajduje się Map oraz pochodne SortedMap
+Na szczycie hierarchi klas znajduje się interface Collection. Pochodnymi interfejsu Collection są:
+* List
+* Set 
+    * pochodną jest SortedSet
+* Queue
+* Deque
+
+Obok tej hierarchii znajduje się Map oraz pochodny SortedMap.
 
 ### Jakie są podstawowe implementacje poszczególnych interfejsów?
 
-Podstawowymi implementacjami interfaceów są :
-* List: ArrayList, LinkedList.
-* Set: HashSet, TreeSet, LinkedHashSet,
-* Queue: PriorityQueue, LinkedList
+Podstawowymi implementacjami interfejsów są:
+* List: LinkedList, ArrayList, 
+* Set: HashSet, TreeSet, LinkedHashSet
+* Queue: LinkedList, PriorityQueue
+* Deque: LinkedList
 * Map: HashMap, TreeMap, LinkedHashMap
-* Deque: BlockingDeque, Linked List, ArrayDeque,
 
 ### W których kolekcjach elementy są sortowane i w jaki sposób?
 
-Elementy mogą być sortowane:
-* List- metodą sort, 
-* LinkedList,
-* ArrayList
+Kolekcje, których elementy możemy posortować:
+* ArrayList, LinkedList - możemy wykorzystać metodę sort i podać opcjonalnie komparator
 
-Kolekcje które przchowują elementy w sposób posortowany
-* TreeSet- może wykożystywać naturalny porządek lub poprzez Comparator.
-* TreeMap- posortowany po kluczu
-* PriorityQueue- naturalny porządek lub comprarator.
-* LinkedHashSet- przechowuje elementy w kolejności wstawienia.
+Kolekcje, które przechowują elementy w sposób posortowany:
+* TreeSet - może wykorzystywać naturalny porządek elementów lub możemy podać własny komparator
+* LinkedHashSet - przechowuje elementy w kolejności wstawienia
+* PriorityQueue - naturalny porządek lub komparator
+* TreeMap - posortowane po kluczu
+* LinkedHashMap - przechowuje elementy w kolejności wstawienia kluczy
 
 ### Implementacje interfejsu List – złożoność operacji
 
-Creating: 
-addElementsToFront: 1184ms.
-addElementsToBack: 12ms.
-Iteration: 
-iterateForEachList: 18ms.
-iterateForList: 10ms.
-Remove: 
-removeList: 2090ms.
--------------
-Creating: 
-addElementsToFront: 7ms.
-addElementsToBack: 10ms.
-Iteration: 
-iterateForEachList: 31ms.
-iterateForList: 15538ms.
-Remove: 
-removeList: 8068ms.
-
+* Napisać aplikację wykorzystującą różne implementacje List i sprawdzić różnice w operacjach dodawania na początek listy, usuwania z początku listy, przeglądania całej listy
+* Wyniki
+    * array list
+        * addElementsToFront: 835 milliseconds
+        * addElementsToBack: 10 milliseconds
+        * iterateList: 12 milliseconds
+        * iterateListForEach: 10 milliseconds
+    * linked list
+        * addElementsToFront: 16 milliseconds
+        * addElementsToBack: 9 milliseconds
+        * iterateList: 35059 milliseconds
+        * iterateListForEach: 16 milliseconds
+        
 ### Do których kolekcji można wstawiać wartości null?
-
-Miejsce na odpowiedź
-
-### Napisać aplikację wykorzystującą różne implementacje List i sprawdzić różnice w operacjach dodawania na początek listy, usuwania z początku listy, przeglądania całej listy
 
 Miejsce na odpowiedź
 
