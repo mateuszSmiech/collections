@@ -35,7 +35,17 @@ Kolekcje, które przechowują elementy w sposób posortowany:
 ### Implementacje interfejsu List – złożoność operacji
 
 * Napisać aplikację wykorzystującą różne implementacje List i sprawdzić różnice w operacjach dodawania na początek listy, usuwania z początku listy, przeglądania całej listy
-
+* Wyniki
+    * array list
+        * addElementsToFront: 835 milliseconds
+        * addElementsToBack: 10 milliseconds
+        * iterateList: 12 milliseconds
+        * iterateListForEach: 10 milliseconds
+    * linked list
+        * addElementsToFront: 16 milliseconds
+        * addElementsToBack: 9 milliseconds
+        * iterateList: 35059 milliseconds
+        * iterateListForEach: 16 milliseconds
 ### Do których kolekcji można wstawiać wartości null?
 
 Miejsce na odpowiedź
