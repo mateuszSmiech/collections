@@ -31,6 +31,30 @@ public class App {
         System.out.println("addElementsToBack: " + (endTime - startTime) + " milliseconds");
     }
 
+    //użyć pętli for (int i
+    public static void iterateList(List<Integer> list) {
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < list.size(); i++) {
+            Integer element = list.get(i);
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("iterateList: " + (endTime - startTime) + " milliseconds");
+    }
+
+    //użyć pętli for each
+    public static void iterateListForEach(List<Integer> list) {
+        long startTime = System.currentTimeMillis();
+        for (Integer integer : list) {
+            Integer element = integer;
+        }
+        long endTime = System.currentTimeMillis();
+        System.out.println("iterateListForEach: " + (endTime - startTime) + " milliseconds");
+    }
+
+    public static void deleteElementsFromFront(List<Integer> list) {
+
+    }
+
     public static void main(String[] args) {
         int count = 100000;
         //dla ArrayList
@@ -39,6 +63,8 @@ public class App {
         System.out.println("array list");
         addElementsToFront(arrayList, count);
         addElementsToBack(arrayList, count);
+        iterateList(arrayList);
+        iterateListForEach(arrayList);
         //przejrzeć całą listę
         //usunąć wszystkie elementy z listy poprzez usuwanie pierwszego elementu listy
 
@@ -47,6 +73,8 @@ public class App {
         System.out.println("linked list");
         addElementsToFront(linkedList, count);
         addElementsToBack(linkedList, count);
+        iterateList(linkedList);
+        iterateListForEach(linkedList);
         //przejrzeć całą listę
         //usunąć wszystkie elementy z listy poprzez usuwanie pierwszego elementu listy
 
