@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 /**
@@ -24,12 +25,11 @@ public class App {
     }
 
     public static void addElementsToBack(List<Integer> list, int count) {
-        long startTime = System.currentTimeMillis();
-        for (int i = 0; i < count; i++) {
-            list.add(random.nextInt());
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println("addElementsToBack: " + (endTime - startTime) + " milliseconds");
+        measureTimeForOperation(list, count, (list1, count1)->{
+            for (int i = 0; i < count1; i++) {
+                list1.add(random.nextInt());
+            }
+        }, "Add element to back");
     }
 
     public static void measureTimeForOperation(List<Integer> list,
@@ -37,6 +37,15 @@ public class App {
                                                String description) {
         long startTime = System.currentTimeMillis();
         operation.accept(list);
+        long endTime = System.currentTimeMillis();
+        System.out.println(description + (endTime - startTime) + " milliseconds");
+    }
+    public static void measureTimeForOperation(List<Integer> list,
+                                               int count,
+                                               BiConsumer<List<Integer>, Integer> operation,
+                                               String description                                               ) {
+        long startTime = System.currentTimeMillis();
+        operation.accept(list, count);
         long endTime = System.currentTimeMillis();
         System.out.println(description + (endTime - startTime) + " milliseconds");
     }

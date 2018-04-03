@@ -49,7 +49,10 @@ Kolekcje, które przechowują elementy w sposób posortowany:
         
 ### Do których kolekcji można wstawiać wartości null?
 
-Miejsce na odpowiedź
+* Kolekcje do których można wstawić null:
+ArrayList, HashMap, HashSet, LinkedList, LinkSet
+* Kolekcje do których nie można wstawić null:
+TreeSet, TreeMap, PriorityQueue, 
 
 ### Napisać operacje wykorzystującą różne implementacje Set i sprawdzić różnice w operacjach dodawania do zbioru
 
